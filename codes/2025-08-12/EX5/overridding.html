@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Selectors Override Example</title>
+  <style>
+    h1 { /* Element selector */
+      /* color: brown; */ /* This is commented out */
+      font-size: 40px;
+      text-align: center;
+    }
+
+    * { 
+      color: green;
+    }
+
+    #header {
+      background-color: lightblue;
+    }
+
+    .class1 { 
+      color: aqua;
+      font-style: italic;
+    }
+
+    .class2 { 
+      color: red;
+      font-weight: bold;
+    }
+
+    .class3 { 
+      color: blue;
+      font-size: 50px;
+    }
+
+    h1, h2, h3 { 
+      color: purple;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="header">This is H1 with ID "header"</h1>
+  <h2>This is H2 heading</h2>
+  <h3 class="class1">This is H3 with class1</h3>
+  <p class="class2">This is a paragraph with class2</p>
+  <div class="class3">This is a div with class3</div>
+
+</body>
+</html>

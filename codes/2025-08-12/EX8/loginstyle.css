@@ -1,0 +1,13 @@
+
+.login-card {
+  width: 350px;
+  border-radius: 10px;
+}
+
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+

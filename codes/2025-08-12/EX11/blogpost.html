@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal Blog</title>
+<style>
+    
+    :root {
+      
+        --light-gray: #f4f4f4;
+        --dark-gray: #333333;
+        --blue: #0077cc;
+    }
+
+    
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        background-color: var(--light-gray);
+        color: var(--dark-gray);
+        line-height: 1.6;
+    }
+
+    a {
+        color: var(--blue);
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+   
+    header {
+        background: var(--white);
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav a {
+        margin: 0 0.75rem;
+        font-weight: 500;
+    }
+
+    
+    .hero {
+          background-color: red; /* red background */
+    color: white;          /* white text for contrast */
+    padding: 20px;  
+        text-align: center;
+    }
+    .hero h1 {
+        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+    }
+    .meta {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+
+    
+    .container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+   
+    main img {
+        max-width: 100%;
+        border-radius: 6px;
+    }
+    main h2 {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .cta-btn {
+        display: inline-block;
+        background: var(--blue);
+        color: var(--white);
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        margin-top: 1.5rem;
+        transition: background 0.3s ease;
+    }
+    .cta-btn:hover {
+        background: #005fa3;
+    }
+
+   
+    aside {
+        background: var(--white);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .about img {
+        width: 100%;
+        border-radius: 50%;
+        max-width: 120px;
+        display: block;
+        margin: 0 auto 1rem;
+    }
+    .social-links a {
+        margin: 0 0.25rem;
+    }
+    .recent-posts a {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    
+    footer {
+        background: var(--white);
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+        margin-top: 2rem;
+    }
+
+   
+    @media (max-width: 900px) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+        aside {
+            margin-top: 2rem;
+        }
+    }
+    @media (max-width: 600px) {
+        .hero h1 {
+            font-size: 1.75rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><strong>My Blog</strong></div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Articles</a>
+        <a href="#about-author">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1> Blog Post</h1>
+    <p class="meta">By Dr.APJ ABDUL KALAM | August 12, 2025</p>
+</section>
+
+<div class="container">
+    <main>
+        <p>Welcome to this blog post. In this article, we’ll discuss how to create a clean and responsive blog layout using HTML and CSS.</p>
+
+        <h2>Section 1: Introduction </h2>
+        <p>here intoduction content </p>
+        <img src="C:\Users\LENOVO\Downloads\image (1).png" alt="Sample image">
+
+        <h2>Section 2: Responsive Design</h2>
+        <p>Responsive design ensures your site looks great on any device. We use media queries to adjust layout and typography for different screen sizes.</p>
+        
+        <h2>Section 3: Minimalism in Web Design</h2>
+        <p>Minimalistic design emphasizes clarity, content, and ease of navigation while avoiding unnecessary decoration.</p>
+        <img src="C:\Users\LENOVO\Downloads\image.png" alt="Minimal design">
+
+        <a href="#" class="cta-btn">Read More Articles</a>
+    </main>
+
+    <aside>
+        <div class="about" id="about-author">
+            <img src="C:\Users\LENOVO\Downloads\A._P._J._Abdul_Kalam.jpg.webp" alt="Author">
+            <h3>About the Author</h3>
+            <p>Dr.APJ ABDUL KALAM is a web developer and designer with a passion for creating clean, user-friendly websites.
+                Biodata:
+                ADDRESS:TAMIL NADU
+                Contact:1234567890
+                MAIL:APJ@gmail.com
+            </p>
+            <div class="social-links">
+                <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="recent-posts">
+            <h3>Recent Posts</h3>
+            <a href="https://www.google.com/search?sca_esv=0de3656c54fa3244&rlz=1C1VDKB_enIN1061IN1061&sxsrf=AE3TifO2UW6eHCGpoZPXFcnICUCE2MwkRw:1754990962665&udm=2&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIeioyp3OhN11EY0n5qfq-zEMZldv_eRjZ2XLYc5GnVnMEIxC4WQfoNDH7FwchyAayypSFRVX7Gyzf60Gn3h439oyzmPFMaoyP2CH3LS6X7h_JBwEUYbsRPK0xRmsG6rLhQ1fbKFrOXXuTF7mVtvKflTnX2R4d4zDCMCE1OnATYkPmOwqPbw&q=abdul+kalam+recent+books&sa=X&ved=2ahUKEwiupafn-oSPAxX7TmwGHYs6AQ0QtKgLegQIFBAB&biw=638&bih=584&dpr=1.5">How to Use CSS Grid Effectively</a>
+           
+           
+            <a href="https://www.google.com/search?q=typography&sca_esv=0de3656c54fa3244&rlz=1C1VDKB_enIN1061IN1061&sxsrf=AE3TifPjn01fXLAHW0BD1NhJ1eCO-FA6eg%3A1754991199496&ei=XwqbaPKFHrGJ4-EPoazAiQU&ved=0ahUKEwiysZ7Y-4SPAxWxxDgGHSEWMFEQ4dUDCBA&uact=5&oq=typography&gs_lp=Egxnd3Mtd2l6LXNlcnAiCnR5cG9ncmFwaHkyChAjGIAEGCcYigUyCBAAGIAEGLEDMggQABiABBixAzIFEAAYgAQyCBAAGIAEGLEDMggQABiABBixAzIFEAAYgAQyChAAGIAEGEMYigUyBRAAGIAEMgoQABiABBhDGIoFSLkVUKUEWNsLcAF4AZABAJgBkgigAcQcqgEFNi0yLjK4AQPIAQD4AQGYAgKgAv8FwgIKEAAYsAMY1gQYR8ICDRAAGIAEGLADGEMYigWYAwCIBgGQBguSBwUxLjUtMaAH-RmyBwM1LTG4B_YFwgcDMi0yyAcN&sclient=gws-wiz-serp">Typography in Modern Web Design</a>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <p>&copy; 2025 My Blog. All rights reserved.</p>
+    <p><a href="#">Twitter</a> | <a href="#">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>

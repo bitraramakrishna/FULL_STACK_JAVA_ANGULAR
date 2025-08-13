@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling if content overflows */
+        }
+
+        /* Container for the entire To-Do List app */
+        .container {
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Max width for larger screens */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        /* Styling for the main heading */
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Input field for new tasks */
+        #taskInput {
+            width: calc(100% - 75px); /* Calculate width dynamically */
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding in width calculation */
+            font-size: 16px;
+        }
+
+        /* Button to add tasks */
+        #addTaskBtn {
+            padding: 10px 15px;
+            border: none;
+            background-color: #5cb85c;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        #addTaskBtn:hover {
+            background-color: #4cae4c;
+        }
+
+        /* List container for tasks */
+        #taskList {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            max-height: 60vh; /* Limit height for scrollable list */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        /* Individual list item styling */
+        #taskList li {
+            background: #eee;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            word-break: break-word; /* Break long words to prevent overflow */
+        }
+
+        /* Delete button styling */
+        .deleteBtn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+            margin-left: 10px; /* Space between task text and button */
+            flex-shrink: 0; /* Prevent button from shrinking */
+        }
+
+        .deleteBtn:hover {
+            background-color: #c9302c;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px 20px;
+            }
+
+            #taskInput {
+                width: calc(100% - 60px);
+                font-size: 14px;
+            }
+
+            #addTaskBtn {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            #taskList li {
+                font-size: 14px;
+            }
+
+            .deleteBtn {
+                padding: 4px 8px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do List </h2>
+        <div>
+            <input type="text" id="taskInput" placeholder="Enter a new task...">
+            <button id="addTaskBtn">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    
+    <script src="EX15.js"></script>
+</body>
+</html>

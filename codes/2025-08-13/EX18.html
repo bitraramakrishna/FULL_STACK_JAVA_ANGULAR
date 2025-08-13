@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    
+    <style>
+        
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #e2e8f0; /* Light gray-blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        /* Container for the calculator */
+        .calculator-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* Rounded corners */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        /* Grouping for input fields */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        /* Styling for number input fields */
+        .number-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid #cbd5e0; /* Light gray border */
+            font-size: 1.125rem;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* Focus state for input fields */
+        .number-input:focus {
+            border-color: #3b82f6; /* Blue on focus */
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Light blue shadow on focus */
+        }
+        /* CSS to hide increment/decrement arrows on number input fields */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield; /* For Firefox */
+        }
+
+        /* Grid for operation buttons */
+        .operations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 1rem; /* Gap between buttons */
+            margin-bottom: 1.5rem;
+        }
+        /* Styling for operation buttons */
+        .operation-button {
+            background-color: #60a5fa; /* Medium blue */
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Hover effect for operation buttons */
+        .operation-button:hover {
+            background-color: #3b82f6; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        /* Styling for the result display area */
+        .result-display {
+            background-color: #f0f4f8; /* Lighter background for result */
+            color: #2c3e50; /* Dark text for result */
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            font-size: 1.75rem; /* Larger result text */
+            font-weight: 700;
+            min-height: 3rem; /* Ensure minimum height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Simple Calculator</h1>
+
+        <div class="input-group">
+            <input type="number" id="num1" class="number-input" placeholder="Enter first number">
+            <input type="number" id="num2" class="number-input" placeholder="Enter second number">
+        </div>
+
+        <div class="operations-grid">
+            <button id="add-btn" class="operation-button">Add (+)</button>
+            <button id="subtract-btn" class="operation-button">Subtract (-)</button>
+            <button id="multiply-btn" class="operation-button">Multiply (*)</button>
+            <button id="divide-btn" class="operation-button">Divide (/)</button>
+        </div>
+
+        <div id="result-display" class="result-display">
+            Result: 0
+        </div>
+    </div>
+
+
+    <script src="EX18.js"></script>
+    
+</body>
+</html>

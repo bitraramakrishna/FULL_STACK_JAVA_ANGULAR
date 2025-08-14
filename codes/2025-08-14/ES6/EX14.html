@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Logout Demo</title>
+    
+
+</head>
+<body>
+    <div class="container flex flex-col items-center">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">Login / Logout</h1>
+
+        <div id="login-form" class="w-full">
+            <div class="mb-4">
+                <label for="userIdInput" class="block text-gray-700 text-sm font-medium mb-2">User ID:</label>
+                <input type="text" id="userIdInput" placeholder="Enter your User ID" class="w-full">
+            </div>
+            <div class="mb-6">
+                <label for="passwordInput" class="block text-gray-700 text-sm font-medium mb-2">Password:</label>
+                <input type="password" id="passwordInput" placeholder="Enter your password" class="w-full">
+            </div>
+            <button id="loginButton" class="btn-login w-full mb-4">Login</button>
+            <button id="logoutButton" class="btn-logout w-full">Logout</button>
+        </div>
+
+        <div id="statusMessage" class="status-message w-full hidden"></div>
+        <p id="loggedInUserDisplay" class="text-gray-600 text-center mt-4 hidden">Logged in as: <span class="font-semibold" id="currentUserId"></span></p>
+    </div>
+
+    <script src="EX14.js"></script>
+</body>
+</html>

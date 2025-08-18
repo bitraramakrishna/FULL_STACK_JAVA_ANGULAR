@@ -1,0 +1,38 @@
+
+
+<div>
+  <h2>Live Search Filter</h2>
+
+  <div class="mb-3">
+    <label for="searchBox" class="form-label text-secondary">Search Name:</label>
+   
+    <input
+      type="text"
+      class="form-control"
+      id="searchBox"
+      [(ngModel)]="searchText"
+      (input)="filterNames()"
+      placeholder="Type to filter names..."
+      aria-label="Search filter for names"
+    >
+  </div>
+
+  <hr class="my-4">
+
+
+  <ul class="list-group list-group-flush">
+    @for (name of filteredNames; track name) {
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ name }}
+        <span class="badge bg-secondary rounded-pill">Found</span>
+      </li>
+    } @empty {
+      <li class="list-group-item text-muted text-center">
+        No matching names found.
+      </li>
+    }
+  </ul>
+
+ 
+</div>
+

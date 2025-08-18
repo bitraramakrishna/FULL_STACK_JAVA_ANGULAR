@@ -1,0 +1,30 @@
+<div class="container mt-5 p-4 bg-light rounded-lg shadow-lg text-center" style="max-width: 500px;">
+  <h2 class="text-primary mb-4">Dynamic Text Color Changer</h2>
+
+  <div class="mb-4 mx-auto" style="max-width: 250px;">
+    <label for="colorSelect" class="form-label text-secondary">Choose a Color:</label>
+    <select
+      class="form-select"
+      id="colorSelect"
+      [(ngModel)]="selectedColor"
+      aria-label="Color selection dropdown"
+    >
+      @for (colorName of colors; track colorName) {
+        <option [value]="colorName">{{ colorName | titlecase }}</option>
+      }
+    </select>
+  </div>
+
+  <hr class="my-4">
+
+  
+  <p class="lead fw-bold text-center"
+     [style.color]="selectedColor"
+     style="font-size: 2.2em; transition: color 0.3s ease-in-out;"
+  >
+    I am RAMAKRISHNA
+  </p>
+
+  <p class="mt-4 text-muted">Selected color: <strong>{{ selectedColor | titlecase }}</strong></p>
+</div>
+

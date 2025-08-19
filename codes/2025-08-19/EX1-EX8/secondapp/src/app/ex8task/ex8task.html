@@ -1,0 +1,17 @@
+<div class="task-form">
+  <form #taskForm="ngForm" (ngSubmit)="addTask(taskForm)">
+    <div>
+      <label for="description">Task Description:</label>
+      <input type="text" id="description" name="description" [(ngModel)]="description" required>
+    </div>
+    <div>
+      <label for="category">Task Category:</label>
+      <select id="category" name="category" [(ngModel)]="category">
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+
+    <button type="submit">Add Task</button>
+  </form>
+</div>
+

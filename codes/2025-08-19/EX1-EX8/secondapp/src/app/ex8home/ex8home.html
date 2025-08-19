@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Task Management</h2>
+
+  <app-ex8task (taskAdded)="addTask($event)"></app-ex8task>
+
+  <app-ex8tasklist 
+    [tasks]="tasks"
+    (taskDeleted)="deleteTask($event)">
+  </app-ex8tasklist>
+</div>

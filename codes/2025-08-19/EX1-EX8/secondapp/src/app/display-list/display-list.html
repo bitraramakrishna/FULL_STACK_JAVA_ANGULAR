@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <h2>Fruit List</h2>
+  <div class="row">
+    @for (fruit of fruits; track fruit.name) {
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img [src]="fruit.imageUrl" class="card-img-top" [alt]="fruit.name">
+          <div class="card-body">
+            <h5 class="card-title">{{ fruit.name }}</h5>
+            <p class="card-text">{{ fruit.description }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

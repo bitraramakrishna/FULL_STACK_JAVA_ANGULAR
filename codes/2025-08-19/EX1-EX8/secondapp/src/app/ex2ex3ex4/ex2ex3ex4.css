@@ -1,0 +1,26 @@
+
+.text-red {
+  color: red;
+}
+
+.big-text {
+  font-size: 24px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+
+
+.highlight {
+  background-color: lightgreen;
+}

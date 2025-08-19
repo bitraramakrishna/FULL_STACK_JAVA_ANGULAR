@@ -1,0 +1,18 @@
+<!--<app-ex5-fruit *ngFor="let fruit of fruitsData" [name]="fruit.name"></app-ex5-fruit>
+<app-ex5-fruit 
+  *ngFor="let fruit of fruitsData" 
+  [name]="fruit.name" 
+  [description]="fruit.description"
+  [imageUrl]="fruit.imageUrl">
+</app-ex5-fruit>-->
+<h2>Fruit List</h2>
+
+<div class="fruit-grid">
+  <div class="fruit-card" *ngFor="let fruit of fruitsData">
+    <img [src]="fruit.imageUrl" [alt]="fruit.name">
+    <h3>{{ fruit.name }}</h3>
+    <p>{{ fruit.description }}</p>
+    <button (click)="removeFruit(fruit.fruitCode)">Remove</button>
+  </div>
+</div>
+

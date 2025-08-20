@@ -1,0 +1,11 @@
+<div >
+  <h2>Ex 2: Calendar with Short Date Format</h2>
+
+  <input type="date" [(ngModel)]="selDate" />
+
+  @if (selDate) {
+    <p>
+      Selected Date: {{ selDate | date:'shortDate' }}
+    </p>
+  }
+</div>

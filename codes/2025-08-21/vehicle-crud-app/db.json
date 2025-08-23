@@ -1,0 +1,32 @@
+{
+  "vehicles": [
+    {
+      "id": "1",
+      "make": "Toyota",
+      "model": "Camry",
+      "fuelType": "Petrol",
+      "price": 25000
+    },
+    {
+      "id": "3",
+      "make": "Tesla",
+      "model": "Model 3",
+      "fuelType": "Electric",
+      "price": 35000
+    },
+    {
+      "id": "4",
+      "make": "Ford",
+      "model": "F-150",
+      "fuelType": "Diesel",
+      "price": 30000
+    },
+    {
+      "id": "a8b4",
+      "make": "TATA",
+      "model": "nano246",
+      "fuelType": "Electric",
+      "price": 222222
+    }
+  ]
+}

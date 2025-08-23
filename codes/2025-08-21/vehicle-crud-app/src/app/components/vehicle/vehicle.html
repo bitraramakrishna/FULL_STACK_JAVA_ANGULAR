@@ -1,0 +1,86 @@
+<div class="vehicle-container">
+  <h2>Vehicle Management</h2>
+
+  
+  <div class="form-container">
+    <h3>{{ isEditing ? 'Edit Vehicle' : 'Add New Vehicle' }}</h3>
+    <form (ngSubmit)="onSubmit()" class="vehicle-form">
+      <div class="form-group">
+        <label for="make">Make:</label>
+        <input 
+          type="text" 
+          id="make" 
+          [(ngModel)]="newVehicle.make" 
+          name="make" 
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <input 
+          type="text" 
+          id="model" 
+          [(ngModel)]="newVehicle.model" 
+          name="model" 
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="fuelType">Fuel Type:</label>
+        <select 
+          id="fuelType" 
+          [(ngModel)]="newVehicle.fuelType" 
+          name="fuelType" 
+          required>
+          <option value="">Select Fuel Type</option>
+          <option value="Petrol">Petrol</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Electric">Electric</option>
+          <option value="Hybrid">Hybrid</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input 
+          type="number" 
+          id="price" 
+          [(ngModel)]="newVehicle.price" 
+          name="price" 
+          required 
+          min="1">
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn-primary">
+          {{ isEditing ? 'Update' : 'Add' }} Vehicle
+        </button>
+        <button type="button" class="btn-secondary" (click)="resetForm()" *ngIf="isEditing">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+
+ 
+  <div class="list-container">
+    <h3>Vehicle List</h3>
+    <div *ngIf="vehicles.length === 0" class="no-vehicles">
+      No vehicles found.
+    </div>
+    
+    <div class="vehicle-grid" *ngIf="vehicles.length > 0">
+      <div class="vehicle-card" *ngFor="let vehicle of vehicles">
+        <div class="vehicle-info">
+          <h4>{{ vehicle.make }} {{ vehicle.model }}</h4>
+          <p><strong>Fuel Type:</strong> {{ vehicle.fuelType }}</p>
+          <p><strong>Price:</strong> {{ vehicle.price | number }}</p>
+        </div>
+        <div class="vehicle-actions">
+          <button class="btn-edit" (click)="editVehicle(vehicle)">Edit</button>
+          <button class="btn-delete" (click)="deleteVehicle(vehicle.id!)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

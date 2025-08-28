@@ -1,0 +1,144 @@
+<div class="container">
+  <h1>Angular Exercises 1-5</h1>
+
+  <!-- Exercise 1: Cities List with Material List Component -->
+  <mat-card class="exercise-card">
+    
+      <mat-card-title>Exercise 1: Cities List</mat-card-title>
+   
+   
+      <mat-list>
+        <mat-list-item *ngFor="let city of cities">
+          
+          <div>{{ city }}</div>
+        </mat-list-item>
+      </mat-list>
+    
+  </mat-card>
+
+  <!-- Exercise 2: Vertical Stepper Form -->
+  <mat-card class="exercise-card">
+    <mat-card-header>
+      <mat-card-title>Exercise 2: Stepper Form (Name, Age, Email)</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="stepperFormGroup">
+        <mat-vertical-stepper [linear]="isLinear" #stepper>
+          
+          <mat-step [stepControl]="nameControl" label="Enter Name">
+            <mat-form-field appearance="outline">
+              <mat-label></mat-label>
+              <input matInput formControlName="name" placeholder="">
+              <mat-error>{{ getErrorMessage('name', stepperFormGroup) }}</mat-error>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext [disabled]="nameControl.invalid">Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step [stepControl]="ageControl" label="Enter Age">
+            <mat-form-field appearance="outline">
+              <mat-label>Age</mat-label>
+              <input matInput type="number" formControlName="age" placeholder="Enter your age">
+              <mat-error>{{ getErrorMessage('age', stepperFormGroup) }}</mat-error>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext [disabled]="ageControl.invalid">Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step [stepControl]="emailControl" label="Enter Email">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" placeholder="Enter your email">
+              <mat-error>{{ getErrorMessage('email', stepperFormGroup) }}</mat-error>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="onStepperSubmit()" [disabled]="stepperFormGroup.invalid">Submit</button>
+            </div>
+          </mat-step>
+
+        </mat-vertical-stepper>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Exercise 3: Text Reversal with FormControl -->
+  <mat-card class="exercise-card">
+    <mat-card-header>
+      <mat-card-title>Exercise 3: Text Reversal</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label></mat-label>
+        <input matInput [formControl]="textControl" placeholder="">
+      </mat-form-field>
+      <p class="reversed-text">
+        <strong>Reversed: </strong>{{ reversedText }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Exercise 4 & 5: Registration Form with Validation -->
+  <mat-card class="exercise-card">
+    <mat-card-header>
+      <mat-card-title>Exercise 4 & 5: Registration Form with Validation</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="registrationForm" (ngSubmit)="onRegistrationSubmit()">
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="name" placeholder="Enter your full name">
+          <mat-error>{{ getErrorMessage('name', registrationForm) }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email" placeholder="Enter your email">
+          <mat-error>{{ getErrorMessage('email', registrationForm) }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error>{{ getErrorMessage('dateOfBirth', registrationForm) }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Subject of Study</mat-label>
+          <mat-select formControlName="subject">
+            <mat-option *ngFor="let subject of subjects" [value]="subject">
+              {{ subject }}
+            </mat-option>
+          </mat-select>
+          <mat-error>{{ getErrorMessage('subject', registrationForm) }}</mat-error>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-raised-button 
+                  color="primary" 
+                  type="submit" 
+                  [disabled]="isSubmitDisabled()">
+            Submit Registration
+          </button>
+        </div>
+
+        <!-- Form Status Display -->
+        <div class="form-status" *ngIf="registrationForm.touched">
+          <p><strong>Form Status:</strong> 
+            <span [class]="registrationForm.valid ? 'valid' : 'invalid'">
+              {{ registrationForm.valid ? 'Valid' : 'Invalid' }}
+            </span>
+          </p>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

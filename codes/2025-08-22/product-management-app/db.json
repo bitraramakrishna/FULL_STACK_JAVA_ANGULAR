@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "category": "Electronics",
+      "price": 999.99,
+      "qty": 9
+    },
+    {
+      "id": "2",
+      "name": "Smartphone",
+      "category": "Electronics",
+      "price": 699.99,
+      "qty": 15
+    },
+    {
+      "id": "2ed2",
+      "name": "redmi",
+      "category": "xiami",
+      "price": 20000,
+      "qty": 11
+    },
+    {
+      "id": "75db",
+      "name": "redmi",
+      "category": "electronics",
+      "price": 20000,
+      "qty": 1
+    },
+    {
+      "id": "774c",
+      "name": "shoes",
+      "category": "fashion",
+      "price": 999,
+      "qty": 0
+    }
+  ],
+  "orders": [
+    {
+      "id": "f8d6",
+      "productId": "1",
+      "productName": "Laptop",
+      "qty": 1,
+      "orderDate": "2025-08-25T03:04:43.394Z"
+    },
+    {
+      "id": "034b",
+      "productId": "774c",
+      "productName": "shoes",
+      "qty": 2,
+      "orderDate": "2025-08-28T12:32:05.244Z"
+    }
+  ]
+}

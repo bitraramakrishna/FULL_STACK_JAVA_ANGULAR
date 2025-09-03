@@ -1,0 +1,248 @@
+
+<!-- Animated background (purely visual) -->
+<div class="bg-animation">
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="plane-animation">✈️</div>
+</div>
+
+<div class="container mt-5 p-4 shadow rounded main-container">   
+    <div class="header-section">
+        <h2 class="text-center mb-4">
+            <i class="fas fa-plane-departure header-icon"></i>
+           Plan Your Journey
+            <i class="fas fa-plane-arrival header-icon"></i>
+        </h2>   
+        <p class="text-center subtitle">Find the best deals for your next adventure</p>
+    </div>
+
+    <form (ngSubmit)="submitSearch()" class="row g-3 align-items-center search-form">     
+        <div class="col-md-4">       
+            <label class="form-label">
+                <i class="fas fa-map-marker-alt label-icon"></i>
+                From
+            </label>       
+            <div class="input-wrapper">
+                <input type="text" [(ngModel)]="search.source" name="source" placeholder="Enter city/airport code"         
+                    minlength="3" required class="form-control" />
+                <i class="fas fa-plane-departure input-decorator"></i>
+            </div>     
+        </div>     
+        <div class="col-md-1 d-flex justify-content-center align-items-end">       
+            <button type="button" class="btn btn-outline-secondary swap-btn" (click)="swap()">
+                <i class="fas fa-exchange-alt"></i>
+            </button>     
+        </div>     
+        <div class="col-md-4">       
+            <label class="form-label">
+                <i class="fas fa-map-marker-alt label-icon"></i>
+                To
+            </label>       
+            <div class="input-wrapper">
+                <input type="text" [(ngModel)]="search.destination" name="destination" placeholder="Enter city/airport code"         
+                    minlength="3" required class="form-control" />
+                <i class="fas fa-plane-arrival input-decorator"></i>
+            </div>     
+        </div>     
+        <div class="col-md-3">       
+            <label class="form-label">
+                <i class="fas fa-calendar-alt label-icon"></i>
+                Departure
+            </label>       
+            <div class="input-wrapper">
+                <input type="date" [(ngModel)]="search.date" name="date" required class="form-control" />
+                <i class="fas fa-clock input-decorator"></i>
+            </div>     
+        </div>     
+        <div class="col-12 text-center mt-4">       
+            <button type="submit" class="btn btn-primary px-5 search-button">
+                <i class="fas fa-search me-2"></i>
+                SEARCH FLIGHTS
+            </button>     
+        </div>   
+    </form> 
+
+    <!-- Trust indicators -->
+    <div class="trust-badges mt-4">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="trust-item">
+                    <i class="fas fa-shield-check"></i>
+                    <span>Secure Booking</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="trust-item">
+                    <i class="fas fa-medal"></i>
+                    <span>Best Price Guarantee</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Instant Confirmation</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="trust-item">
+                    <i class="fas fa-users"></i>
+                    <span>10M+ Happy Travelers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 24/7 Helpline Section -->
+<div class="helpline-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="helpline-content">
+                    <div class="helpline-header">
+                        <i class="fas fa-headset helpline-icon"></i>
+                        <div>
+                            <h3>24/7 Customer Support</h3>
+                            <p class="helpline-subtitle">We're here to help you every step of the way</p>
+                        </div>
+                    </div>
+                    
+                    <div class="support-options">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="support-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <div class="support-details">
+                                        <strong>Call Us</strong>
+                                        <p>+1-800-FLY-HELP (359-4357)</p>
+                                        <small>Available 24/7 in 15+ languages</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="support-item">
+                                    <i class="fas fa-comments"></i>
+                                    <div class="support-details">
+                                        <strong>Live Chat</strong>
+                                        <p>Instant help from our experts</p>
+                                        <small>Average response time: 30 seconds</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="support-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="support-details">
+                                        <strong>Email Support</strong>
+                                        <p>support@flightbook.com</p>
+                                        <small>Response within 2 hours</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="support-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div class="support-details">
+                                        <strong>WhatsApp</strong>
+                                        <p>+1-800-359-4357</p>
+                                        <small>Text us for quick assistance</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-topics mt-4">
+                        <h5>Common Help Topics:</h5>
+                        <div class="topic-tags">
+                            <span class="topic-tag">Booking Changes</span>
+                            <span class="topic-tag">Cancellations</span>
+                            <span class="topic-tag">Refunds</span>
+                            <span class="topic-tag">Check-in Issues</span>
+                            <span class="topic-tag">Baggage Info</span>
+                            <span class="topic-tag">Travel Requirements</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="support-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">4.8/5</div>
+                        <div class="stat-label">Customer Rating</div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">2M+</div>
+                        <div class="stat-label">Issues Resolved</div>
+                        <small>This year alone</small>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-number">30 sec</div>
+                        <div class="stat-label">Avg Response Time</div>
+                        <small>Live chat support</small>
+                    </div>
+                </div>
+                
+                <div class="emergency-contact">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <strong>Emergency Travel Support</strong>
+                        <p>For urgent travel assistance</p>
+                        <a href="tel:+18003594357" class="emergency-number">+1-800-359-4357</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Services Section -->
+<div class="services-section">
+    <div class="container">
+        <h4 class="text-center mb-4">Why Choose Our Flight Service?</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="service-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h6>Best Price Promise</h6>
+                    <p>Find a lower price? We'll match it plus give you $50 credit</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-card">
+                    <i class="fas fa-undo"></i>
+                    <h6>Free Cancellation</h6>
+                    <p>Cancel within 24 hours of booking for a full refund</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-card">
+                    <i class="fas fa-bell"></i>
+                    <h6>Flight Alerts</h6>
+                    <p>Get notified about price drops and schedule changes</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-card">
+                    <i class="fas fa-award"></i>
+                    <h6>Loyalty Rewards</h6>
+                    <p>Earn points with every booking and unlock exclusive perks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

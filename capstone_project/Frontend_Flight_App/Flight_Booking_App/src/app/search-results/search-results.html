@@ -1,0 +1,43 @@
+<div class="container mt-4">   
+    <h2>Choose Flight</h2>   
+    <div class="row mb-4 filters">     
+        <div class="col-md-4"> 
+             <h5>Filter</h5>             
+            <h6>Airlines</h6>       
+            <div *ngFor="let airline of airlines">         
+                <input type="checkbox" (change)="onAirlineFilterChange($event, airline)" /> {{ airline }}       
+            </div>     
+        </div>   
+    </div>   
+    <table class="table" *ngIf="filteredFlights.length > 0; else noFlights">     
+        <thead>       
+            <tr>         
+                <th>Airline</th>         
+                <th>Source</th>         
+                <th>Destination</th>         
+                <th>Start Time</th>         
+                <th>End Time</th>         
+                <th>Duration</th>         
+                <th>Price</th>         
+                <th>Action</th>       
+            </tr>     
+        </thead>     
+        <tbody>       
+            <tr *ngFor="let flight of filteredFlights">         
+                <td>{{ flight.airline }}</td>         
+                <td>{{ flight.source }}</td>         
+                <td>{{ flight.destination }}</td>         
+                <td>{{ flight.startDate | date:'shortTime'}}</td>         
+                <td>{{ flight.endDate | date:'shortTime'}}</td>         
+                <td>{{ getDuration(flight.startDate, flight.endDate) }}</td>         
+                <td>₹{{ flight.price }}</td>         
+                <td>           
+                    <button class="btn btn-primary" (click)="book(flight.flightId)">Book</button>         
+                </td>       
+            </tr>     
+        </tbody>   
+    </table>    
+    <ng-template #noFlights>     
+        <p>No flights found. Try again with different criteria.</p>   
+    </ng-template> 
+</div>
